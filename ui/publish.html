@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+      <script src="controller.js" type="text/javascript"> </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <style>
+ .bcolor{
+ border-left: 3px solid #f2476a;
+ }
+ .md-toolbar{
+ background-color: black;
+ }
+ .padd{
+ padding-left: 70px;
+ }
+table, th , td  {
+  width: 70%;
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  margin-left: 180px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+.tdr tr, .tdr td, .tdr tr:nth-child(odd), .tdr tr:nth-child(even) {
+   border:0px;
+   background: transparent;
+}
+a:link{
+  text-decoration: none;
+  color: black;
+  }
+a:active{
+  text-decoration: none;
+  color: black;
+  }
+a:visited{
+  text-decoration: none;
+  color: black;
+  }
+a:hover{
+  text-decoration: none;
+  color: black;
+  }
+ </style>
+</head>
+<body>
+<div ng-app="homeapp" ng-controller="basiccontrol as ctrl" ng-cloak>
+
+    <md-toolbar >
+     <div class="md-toolbar-tools">
+      <div class="menu-demo-container" layout-align="center center" layout="column">
+      <md-menu>
+      
+        <md-button class="md-icon-button" aria-label="menu" ng-disabled="false" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+          <md-icon md-svg-icon="ico1.svg"></md-icon>
+        </md-button>
+        <md-menu-content width="4.5">
+        <md-menu-item>
+        <md-button ng-click="change()" class="bcolor md-flex">
+         <md-icon md-svg-icon="edit.svg"></md-icon>
+        <a href="index.html">Manage Generics</a>
+        </md-button>
+        </md-menu-item>
+          <md-menu-item>
+           <md-button ng-click="change1()" class="bcolor md-flex">
+         <md-icon md-svg-icon="edit.svg"></md-icon>
+        <a href="publish.html">Publish</a>
+        </md-button>
+        </md-menu-item>
+        <md-menu-item>
+           <md-button ng-click="change2()" class="bcolor md-flex">
+         <md-icon md-svg-icon="edit.svg"></md-icon>
+        <a href="clmaster.html">Classification Master</a>
+        </md-button>
+        </md-menu-item>
+        <md-menu-item>
+           <md-button ng-click="change3()" class="bcolor md-flex">
+         <md-icon md-svg-icon="edit.svg"></md-icon>
+        <a href="pregnancy.html">Pregnancy Category Master</a>
+        </md-button>
+        </md-menu-item>
+                <md-menu-item>
+           <md-button ng-click="change4()" class="bcolor md-flex">
+         <md-icon md-svg-icon="edit.svg"></md-icon>
+        <a href="schedule.html">Schedule Master</a>
+        </md-button>
+        </md-menu-item>
+            <md-menu-item>
+           <md-button ng-click="change5()" class="bcolor md-flex">
+         <md-icon md-svg-icon="edit.svg"></md-icon>
+        <a href="route.html">Route of Administration</a>
+        </md-button>
+        </md-menu-item>
+        </md-menu>
+        </div>
+        <h2>
+          <span class="md-flex">Publish</span>
+        </h2>
+        </div>
+        
+    </md-toolbar>
+    <br><br><br>
+    <div layout="row">
+    <div flex-gt-sm="100" flex="10">
+     <span class="padd md-flex md-display-1">Publish</span>
+     </div>
+     <div flex-gt-sm="10" flex="100">
+    <md-button class="md-icon-button md-raised md-flex" style="margin-right: 30px;">
+<md-icon md-svg-icon="plus1.svg"></md-icon>
+</md-button></div>
+</div>
+<table style="margin-top: 100px;">
+  <tr style="background-color: #778899; color: white;">
+    <td><b>Generic Name</b></td>
+    <td><b>Classification</b></td>
+    <td style="min-width: 100px;"><b>Last Saved</b></td>
+    <td style="min-width: 150px;"><b>Last Saved By</b></td>
+  </tr>
+    <tr ng-repeat="x in names">
+     <td>{{ x.Name }}</td>
+    <td>{{ x.Country }}</td>
+    <td>2:36 pm</td>
+    <td>None</td>
+  </tr>
+</table>
+<br><br>
+<div layout="row" layout-align="end center" style="margin-right: 200px;">
+    <md-button class="md-raised md-primary">Publish</md-button>
+    </div>
+    <br>
+</div>
+</body>
+</html>
